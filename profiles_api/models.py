@@ -34,8 +34,8 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     """database model for users in the system"""
     email = models.EmailField(max_length = 255, unique = True);
     name = models.CharField(max_length = 255);
-    isActive = models.BooleanField(default = True);
-    isAdmin = models.BooleanField(default = True);
+    is_active = models.BooleanField(default = True);
+    is_staff = models.BooleanField(default = True);
     objects = UserProfileManager();
 
     USERNAME_FIELD = 'email';
